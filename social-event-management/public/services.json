@@ -1,0 +1,177 @@
+[
+    {
+        "id": 1,
+        "eventType": "Wedding",
+        "eventImageURL": "https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", 
+        "serviceDescription": "Comprehensive wedding planning and coordination, ensuring your special day is truly unforgettable.",
+        "keyServices": [
+            "Venue sourcing and decoration",
+            "Catering and menu planning",
+            "Photography and videography",
+            "Entertainment and music arrangements"
+        ],
+        "pricing": 10000,
+        "testimonials": [
+            {
+                "content":"Our wedding day was magical, thanks to this incredible service!",
+                "author": "Jane Doe"
+            },
+            {
+                "content":"From start to finish, every detail was handled perfectly. I couldn't have dreamed of a better wedding.",
+                "author": "John Smith"
+            },
+            {
+                "content":"The team made our wedding day a fairytale come true. Heartfelt thanks!",
+                "author": "Alice Johnson"
+            }
+              
+            
+        ]
+    },
+    {
+        "id": 2,
+        "eventType": "Birthday",
+        "eventImageURL": "https://images.unsplash.com/photo-1577998474517-7eeeed4e448a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+        "serviceDescription": "Crafting memorable birthday experiences tailored to your unique desires and themes.",
+        "keyServices": [
+            "Theme decoration",
+            "Custom cake and dessert tables",
+            "Entertainment (DJ, magic shows, etc.)",
+            "Personalized invitations"
+        ],
+        "pricing": 2000,
+        "testimonials": [
+            {
+                "content":"The best birthday bash ever! Everyone loved the arrangements.",
+                "author": "Jane Doe"
+            },
+            {
+                "content":"The team went above and beyond to make sure every guest had a memorable time.",
+                "author": "John Smith"
+            },
+            {
+                "content": "The birthday theme was executed flawlessly. My child was over the moon!",
+                "author": "Alice Johnson"
+            }
+                
+           
+        ]
+    },
+    {
+        "id": 3,
+        "eventType": "Engagement",
+        "eventImageURL": "https://images.unsplash.com/photo-1588814096146-e7c56156f9f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+        "serviceDescription": "Creating intimate and elegant engagement celebrations that echo the promise of a beautiful future.",
+        "keyServices": [
+            "Venue booking and setup",
+            "Ring ceremony coordination",
+            "Live music or DJ services",
+            "Professional photography sessions"
+        ],
+        "pricing": 5000,
+        "testimonials": [
+            {
+                "content":"The attention to detail made our engagement truly special.",
+                "author": "Jane Doe"
+            },
+            {
+                "content":"Everything was perfect, from the venue to the music. We're so grateful!",
+                "author": "John Smith"
+            },
+            {
+                "content": "Our engagement party was a hit! The team ensured every moment was captured beautifully.",
+                "author": "Alice Johnson"
+            }
+            
+            
+            
+        ]
+    },
+    {
+        "id": 4,
+        "eventType": "Baby Shower",
+        "eventImageURL": "https://images.unsplash.com/photo-1622290291165-d341f1938b8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1972&q=80",
+        "serviceDescription": "Celebrating the joy of a new beginning with endearing and heartfelt baby shower arrangements.",
+        "keyServices": [
+            "Themed decoration (e.g., blue, pink, neutral)",
+            "Customized baby games and activities",
+            "Dessert and snack tables",
+            "Gift registry coordination"
+        ],
+        "pricing": 2500,
+        "testimonials": [
+            {
+                "content":"The baby shower was a hit! Loved every moment.",
+                "author": "Jane Doe"
+            },
+            {
+                "content": "Such a delightful and heartwarming setup. Everyone enjoyed thoroughly.",
+                "author": "John Smith"
+            },
+            {
+                "content": "The games and activities were the highlight. Thank you for such a wonderful day!",
+                "author": "Alice Johnson"
+            }
+            
+           
+            
+        ]
+    },
+    {
+        "id": 5,
+        "eventType": "Anniversary",
+        "eventImageURL": "https://images.unsplash.com/photo-1514845505178-849cebf1a91d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+        "serviceDescription": "Marking milestones with thoughtful and romantic anniversary event services.",
+        "keyServices": [
+            "Venue reservation and romantic setups",
+            "Candlelit dinners with custom menus",
+            "Memorial video/slideshow creation",
+            "Live band or romantic playlist setup"
+        ],
+        "pricing": 3000,
+        "testimonials": [
+            {
+                "content":"An anniversary to remember! Thanks for making it so special.",
+                "author": "Jane Doe"
+            },
+            {
+                "content":"The dinner was exquisite, and the ambiance was pure romance. Couldn't have asked for more.",
+                "author": "John Smith"
+            },
+            {
+                "content":"The music selection was on point. A truly unforgettable evening!",
+                "author": "Alice Johnson"
+            }
+
+        ]
+    },
+    {
+        "id": 6,
+        "eventType": "Get Together",
+        "eventImageURL": "https://images.unsplash.com/photo-1576867757603-05b134ebc379?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "serviceDescription": "Planning relaxed and enjoyable get-togethers, perfect for catching up and creating new memories.",
+        "keyServices": [
+            "Venue arrangement and decoration",
+            "Group activity planning (e.g., karaoke, board games)",
+            "Buffet or potluck coordination",
+            "Music and entertainment setup"
+        ],
+        "pricing": 1500,
+        "testimonials": [
+            {
+                "content":"A seamless get-together experience. Everyone had a blast!",
+                "author": "Jane Doe"
+            },
+            {
+                "content": "The venue was perfect, and the activities kept everyone engaged.",
+                "author": "John Smith"
+            },
+            {
+                "content": "From the food to the music, everything was top-notch. Can't wait for the next one!",
+                "author": "Alice Johnson"
+            }
+           
+            
+        ]
+    }
+]
