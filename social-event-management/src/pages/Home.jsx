@@ -12,7 +12,6 @@ import "aos/dist/aos.css";
 
 const Home = () => {
   const services = useLoaderData([]);
-  //console.log(services);
 
   useEffect(() => {
     AOS.init({
@@ -25,18 +24,18 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <div>
-        <h2 className="text-2xl bg-slate-200 font-semibold rounded-md mb-4">
+        <h2 className="text-2xl bg-slate-200 font-semibold rounded-md mb-4 text-center">
           Services
         </h2>
       </div>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services?.map((service) => (
           <ServiceCategory key={service.id} service={service}></ServiceCategory>
         ))}
       </div>
 
       <div className="mt-8 justify-center bg-slate-200">
-        <h2 className="text-2xl font-semibold rounded-md mb-4">Gallery</h2>
+        <h2 className="text-2xl font-semibold rounded-md mb-4 text-center">Gallery</h2>
         <Gallery />
       </div>
       <div className="mt-8">

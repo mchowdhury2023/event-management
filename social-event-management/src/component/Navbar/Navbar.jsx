@@ -6,49 +6,46 @@ import Logo from '../../assets/images/logo.jpg';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [menuOpen, setMenuOpen] = useState(false); // To control the mobile dropdown menu
 
-  const handleSignOut = ()=> {
-        logOut()
-        .then()
-        .catch()
-
+  const handleSignOut = () => {
+        logOut().then().catch();
   }
 
   const navLinks = (
-    <>
-      <li>
-        <NavLink to="/">Home</NavLink>
+    <div className={`${menuOpen ? 'block' : 'hidden'} lg:flex`}>
+      <li className="mt-3 lg:mt-0">
+        <NavLink exact to="/" activeClassName="text-red-500">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/services">Services</NavLink>
+      <li className="mt-3 lg:mt-0">
+        <NavLink to="/services" activeClassName="text-red-500">Services</NavLink>
       </li>
-      <li>
-        <NavLink to="/career">Join Us</NavLink>
+      <li className="mt-3 lg:mt-0">
+        <NavLink to="/career" activeClassName="text-red-500">Join Us</NavLink>
       </li>
-      <li>
-        <NavLink to="/about">About Us</NavLink>
+      <li className="mt-3 lg:mt-0">
+        <NavLink to="/about" activeClassName="text-red-500">About Us</NavLink>
       </li>
-      
-      
-    </>
+    </div>
   );
+
   return (
-    <div className="navbar bg-slate-300 h-32 flex items-center mb-2">
-      <div className="h-full flex items-center"> 
-        <img src={Logo} alt="Logo" className="h-full w-56" /> 
-      </div>
-      
-      
-      <div className="navbar-start">
-        
+    <div className="navbar bg-slate-300 h-32 flex items-center justify-between px-6 mb-4">
+      <div className="flex items-center mr-40">
+        <img src={Logo} alt="Logo" className="h-24 w-24 lg:w-48 rounded-full" />
       </div>
 
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+      <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden">
+        {/* Hamburger icon */}
+        ☰
+      </button>
+
+      <div className="navbar-center hidden lg:block">
+        <ul className="menu menu-horizontal px-1 space-x-4">{navLinks}</ul>
       </div>
       
       <div className="navbar-end flex items-center">
-        {user && (
+        {user ? (
           <>
             <div className="flex flex-col items-end mr-2">
               <span className="text-sm font-bold">{user.displayName}</span>
@@ -58,19 +55,21 @@ const Navbar = () => {
                 <img src={user?.photoURL || userDefaultPicture} alt="User Avatar" />
               </div>
             </label>
+            <button onClick={handleSignOut} className="btn bg-red-400 text-white px-4 py-2 rounded block text-center ml-2">Sign Out</button>
           </>
-        )}
-        {user ? (
-          <button onClick={handleSignOut} className="btn bg-red-400 text-white px-4 py-2 rounded block text-center ml-2">Sign Out</button>
         ) : (
-          <Link
-            to="/login"
-            className="bg-red-400 text-white px-4 py-2 rounded block text-center ml-2"
-          >
+          <Link to="/login" className="bg-red-400 text-white px-4 py-2 rounded block text-center ml-2">
             Login/Register
           </Link>
         )}
       </div>
+
+      {/* Mobile dropdown menu */}
+      {menuOpen && (
+        <div className="absolute top-32 left-0 right-0 z-20 bg-slate-300 lg:hidden">
+          <ul className="menu py-4">{navLinks}</ul>
+        </div>
+      )}
     </div>
   );
 };
