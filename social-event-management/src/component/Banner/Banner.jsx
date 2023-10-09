@@ -27,7 +27,7 @@ const Banner = () => {
     <div className="relative w-full h-[450px] mb-10 overflow-hidden">
       {/* Carousel */}
       <div className="flex items-center justify-center h-screen bg-gray-100">
-  <div className="carousel w-3/4 h-full relative z-0 opacity-70">
+  <div className="carousel w-full h-full relative z-0 opacity-70">
     <div id="item1" className={`carousel-item w-full h-full ${activeSlide !== 1 ? 'hidden' : ''}`}>
       <img src={birthdayImage} className="w-full h-full object-cover" alt="Birthday" />
     </div>
@@ -42,6 +42,14 @@ const Banner = () => {
 
       {/* Search bar */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+        <div className="mb-10">
+          <h2 className="text-5xl text-orange-700 font-semibold">We Arrange</h2>
+          <h2 className="text-5xl font-semibold">You</h2>
+          <h2 className="text-5xl font-semibold">Celebrate</h2>
+          <p className="mt-4 text-white">Planning a weding, Birthday, Engagement, Anniversary or any other Events in our City is not easy. <br/>
+              and it takes skills to make it look all easy-going and we do that for you.
+          </p>
+        </div>
         <div className="relative flex w-full max-w-md">
           <input
             type="text"
