@@ -14,6 +14,9 @@ import Register from './pages/Register/Register.jsx';
 import AuthProvider from './authentication/AuthProvider.jsx';
 import ServiceDetails from './component/ServiceDetails/ServiceDetails.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
+import 'react-toastify/dist/ReactToastify.css';
+import About from './pages/About/About.jsx';
+import JoinUs from './pages/JoinUs/JoinUs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +42,15 @@ const router = createBrowserRouter([
               <ServiceDetails></ServiceDetails>,
         </PrivateRoute>
      
-      }
+      },
+      {
+        path:'/about',
+        element: <About></About>
+      },
+      {
+        path:'/career',
+        element: <JoinUs></JoinUs>
+      },
     ]
   },
 ]);

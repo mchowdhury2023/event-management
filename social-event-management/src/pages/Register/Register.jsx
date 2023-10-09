@@ -1,33 +1,88 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Navbar from '../../component/Navbar/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../authentication/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+
+
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const [registerError, setRegisterError] = useState('');
+    const [regSuccess, setRegSuccess] = useState('');
 
-    const handleRegister = (e) => {
-        e.preventDefault();
+    const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+     // State for form fields
+     const [formData, setFormData] = useState({
+      name: '',
+      photo: '',
+      email: '',
+      password: ''
+  });
+
+  const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setFormData(prevState => ({ ...prevState, [name]: value }));
+  }
+
+  const clearFormFields = () => {
+      setFormData({
+          name: '',
+          photo: '',
+          email: '',
+          password: ''
+      });
+  }
+
+  const handleRegister = (e) => {
+    e.preventDefault();
     
-        const form = new FormData(e.currentTarget);
-        const name = form.get("name");
-        const photo = form.get("photo");
-        const email = form.get("email");
-        const password = form.get("password");
-    
-        console.log(name, photo, email, password);
-    
-        
-        createUser(email, password)
-          .then((result) => {
-            console.log(result.user);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      };
-    
+    const { name, photo, email, password } = formData;
+
+    setRegisterError('');
+    setRegSuccess('');
+
+    if (password.length < 6) {
+        const errorMsg = "Password must be at least 6 characters long";
+        setRegisterError(errorMsg);
+        toast.error(errorMsg);
+        clearFormFields();
+        return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+        const errorMsg = "Password must contain at least one uppercase letter";
+        setRegisterError(errorMsg);
+        toast.error(errorMsg);
+        clearFormFields();
+        return;
+    }
+
+    if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
+        const errorMsg = "Password must contain at least one special character";
+        setRegisterError(errorMsg);
+        toast.error(errorMsg);
+        clearFormFields();
+        return;
+    }
+
+    // If validations pass, continue with user creation
+    createUser(email, password)
+        .then((result) => {
+            const successMsg = 'User created successfully';
+            setRegSuccess(successMsg);
+            toast.success(successMsg);
+
+            navigate('/login');
+        })
+        .catch((error) => {
+            setRegisterError(error.message);
+            toast.error(error.message);
+        });
+};
+
       return (
         <div>
          
@@ -43,6 +98,8 @@ const Register = () => {
                   name="name"
                   className="input input-bordered"
                   required
+                  value={formData.name}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="form-control">
@@ -55,6 +112,8 @@ const Register = () => {
                   name="photo"
                   className="input input-bordered"
                   required
+                  value={formData.photo}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="form-control">
@@ -67,6 +126,8 @@ const Register = () => {
                   name="email"
                   className="input input-bordered"
                   required
+                  value={formData.email}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="form-control">
@@ -79,6 +140,8 @@ const Register = () => {
                   name="password"
                   className="input input-bordered"
                   required
+                  value={formData.password}
+                  onChange={handleInputChange}
                 />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
@@ -90,6 +153,8 @@ const Register = () => {
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
+        
+        <ToastContainer></ToastContainer>
             <p className="text-center mt-4">
               Already Have an Account?
               <Link className="text-blue-600 font-bold ml-2" to="/login">

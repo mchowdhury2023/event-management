@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import userDefaultPicture from "../../assets/user.png";
 import { AuthContext } from "../../authentication/AuthProvider";
+import Logo from '../../assets/images/logo.jpg';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -19,17 +20,21 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/services">Services</NavLink>
       </li>
       <li>
-        <NavLink to="/career">Career</NavLink>
+        <NavLink to="/about">About Us</NavLink>
       </li>
+      <li>
+        <NavLink to="/career">Join Us</NavLink>
+      </li>
+      
     </>
   );
 
   return (
     <div className="navbar bg-base-100">
-      <img src="" alt="Logo" className="w-36" />
+      <img src={Logo} alt="Logo" className="w-56" />
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

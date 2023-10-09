@@ -22,7 +22,7 @@ const ServiceCategory = ({ service }) => {
           <h2 className="card-title text-white">{eventType}</h2>
           <div className="card-actions justify-center">
             <Link to={`/services/${id}`}>
-              <button className="btn bg-blue-300">Details</button>
+              <button className="btn bg-gray-500 text-black bg-opacity-50">Details</button>
             </Link>
           </div>
         </div>
