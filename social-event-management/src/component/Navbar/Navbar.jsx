@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-slate-300 h-32 flex items-center mb-2">
       <div className="h-full flex items-center"> 
-        <img src={Logo} alt="Logo" className="h-full w-80 rounded-full" /> 
+        <img src={Logo} alt="Logo" className="h-full w-56" /> 
       </div>
       
       
