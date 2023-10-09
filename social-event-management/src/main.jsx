@@ -17,6 +17,8 @@ import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 import 'react-toastify/dist/ReactToastify.css';
 import About from './pages/About/About.jsx';
 import JoinUs from './pages/JoinUs/JoinUs.jsx';
+import Services from './pages/Services/Services.jsx';
+import PageNotFound from './pages/PageNotFound/PageNotFound.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,8 +51,22 @@ const router = createBrowserRouter([
       },
       {
         path:'/career',
-        element: <JoinUs></JoinUs>
+        element: <PrivateRoute>
+                    <JoinUs></JoinUs>
+                </PrivateRoute>
       },
+      {
+        path:'/services',
+        element: <PrivateRoute>
+                    <Services></Services>
+                </PrivateRoute>
+
+      },
+      {
+        path: "*", 
+        element: <PageNotFound></PageNotFound>
+    }
+      
     ]
   },
 ]);

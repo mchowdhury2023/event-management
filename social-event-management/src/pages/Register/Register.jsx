@@ -5,7 +5,6 @@ import { AuthContext } from '../../authentication/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 
 
-
 const Register = () => {
 
     const [registerError, setRegisterError] = useState('');
